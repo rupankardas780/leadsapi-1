@@ -14,4 +14,4 @@ class LeadsViewSet(viewsets.ModelViewSet):
     queryset = Lead.objects.all()
     serializer_class = LeadSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ('email','location_type',"location_string")
+    filter_fields = ('email',"location_string")

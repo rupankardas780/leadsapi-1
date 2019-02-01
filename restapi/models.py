@@ -1,5 +1,6 @@
 from django.db import models
 from restapi.enums import LocationType, LeadStatus
+from enumchoicefield import EnumChoiceField
 
 
 class BaseModel(models.Model):
@@ -16,10 +17,8 @@ class Lead(BaseModel):
     last_name = models.CharField(max_length=64, blank=False, null=False, )
     mobile = models.CharField(max_length=13, blank=False, null=False, )
     email = models.CharField(max_length=128, blank=False, null=False, )
-    location_type = models.CharField(max_length=10,
-                                     choices=[(tag, tag.value) for tag in LocationType])
+    location_type = EnumChoiceField(LocationType, default=LocationType.Country)
     location_string = models.CharField(max_length=64)
-    status = models.CharField(max_length=10,
-                                     choices=[(tag, tag.value) for tag in LeadStatus], default=LeadStatus.Created)
-    communication = models.CharField(max_length=512)
-    tags = models.CharField(max_length=512) # Comma List
+    status = EnumChoiceField(LeadStatus, default=LeadStatus.Created)
+    communication = models.CharField(max_length=512,null=True)
+    tags = models.CharField(max_length=512, null=True) # Comma List

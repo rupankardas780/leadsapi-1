@@ -20,6 +20,6 @@ class Lead(BaseModel):
                                      choices=[(tag, tag.value) for tag in LocationType])
     location_string = models.CharField(max_length=64)
     status = models.CharField(max_length=10,
-                                     choices=[(tag, tag.value) for tag in LocationType], default=LeadStatus.Created)
+                                     choices=[(tag, tag.value) for tag in LeadStatus], default=LeadStatus.Created)
     communication = models.CharField(max_length=512)
     tags = models.CharField(max_length=512) # Comma List

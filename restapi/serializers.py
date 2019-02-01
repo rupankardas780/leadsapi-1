@@ -5,4 +5,4 @@ from restapi.models import Lead
 class LeadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lead
-        fields = '_all_'
+        fields = '__all__'

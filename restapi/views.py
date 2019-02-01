@@ -7,7 +7,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("Hello, world. You're at Leads API.")
 
 
 class LeadsViewSet(viewsets.ModelViewSet):

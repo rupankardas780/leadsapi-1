@@ -26,6 +26,6 @@ router.register(r'leads', LeadsViewSet, base_name='user')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'api/', include(router.urls)),
-    path(r'index', index),
+    path(r'', index),
 ]
 

@@ -11,7 +11,7 @@ class BaseModel(models.Model):
         abstract = True
 
 
-class Question(BaseModel):
+class Lead(BaseModel):
     first_name = models.CharField(max_length=64, blank=False, null=False, )
     last_name = models.CharField(max_length=64, blank=False, null=False, )
     mobile = models.CharField(max_length=13, blank=False, null=False, )

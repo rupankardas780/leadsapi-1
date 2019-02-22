@@ -16,7 +16,7 @@ class Lead(BaseModel):
     first_name = models.CharField(max_length=64, blank=False, null=False, )
     last_name = models.CharField(max_length=64, blank=False, null=False, )
     mobile = models.CharField(max_length=13, blank=False, null=False, )
-    email = models.CharField(max_length=128, blank=False, null=False, )
+    email = models.CharField(max_length=128, blank=False, null=False,unique=True)
     location_type = EnumChoiceField(LocationType, default=LocationType.Country)
     location_string = models.CharField(max_length=64)
     status = EnumChoiceField(LeadStatus, default=LeadStatus.Created)

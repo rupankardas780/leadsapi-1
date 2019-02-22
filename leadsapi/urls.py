@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from restapi.views import LeadsViewSet, index
-
+from restapi.views import LeadsViewSet, index, mark_communication
+from django.conf.urls import url
 
 router = DefaultRouter()
 router.register(r'leads', LeadsViewSet, base_name='user')
@@ -26,6 +26,7 @@ router.register(r'leads', LeadsViewSet, base_name='user')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'api/', include(router.urls)),
+    url(r'^api/mark_lead/(?P<pk>[0-9]+)$', mark_communication),
     path(r'', index),
 ]
 

@@ -22,7 +22,7 @@ class LeadsViewSet(viewsets.ModelViewSet):
     filter_fields = ('email',"location_string")
 
 
-@api_view(['POST'])
+@api_view(['PUT'])
 @renderer_classes((JSONRenderer,))
 def mark_communication(request, pk):
     lead = Lead.objects.filter(id=pk).all()
